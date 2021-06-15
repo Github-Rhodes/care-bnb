@@ -3,7 +3,7 @@ import sendRequest from "./send-request";
 const BASE_URL = "/api/users";
 
 export function signUp(userData) {
-  return sendRequest(BASE_URL, "POST", userData);
+  return sendRequest(BASE_URL, "POST", userData, true);
 }
 
 export function login(credentials) {
@@ -12,6 +12,10 @@ export function login(credentials) {
 
 export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
+}
+
+export function allUsers() {
+  return sendRequest(`${BASE_URL}/all`);
 }
 
 export function getAllCaregivers() {
